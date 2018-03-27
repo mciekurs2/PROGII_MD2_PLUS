@@ -33,7 +33,7 @@
             this.fileExitMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpAboutMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.nedelasTempGridView = new System.Windows.Forms.DataGridView();
             this.pirmdienaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.otrdienaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tresdienaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,7 +48,7 @@
             this.apstiprinatButton = new System.Windows.Forms.Button();
             this.grafiskiButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nedelasTempGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -73,7 +73,7 @@
             // fileExitMenu
             // 
             this.fileExitMenu.Name = "fileExitMenu";
-            this.fileExitMenu.Size = new System.Drawing.Size(180, 22);
+            this.fileExitMenu.Size = new System.Drawing.Size(92, 22);
             this.fileExitMenu.Text = "Exit";
             // 
             // helpMenu
@@ -89,11 +89,14 @@
             this.helpAboutMenu.Name = "helpAboutMenu";
             this.helpAboutMenu.Size = new System.Drawing.Size(180, 22);
             this.helpAboutMenu.Text = "About";
+            this.helpAboutMenu.Click += new System.EventHandler(this.helpAboutMenu_Click);
             // 
-            // dataGridView1
+            // nedelasTempGridView
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.nedelasTempGridView.AllowUserToAddRows = false;
+            this.nedelasTempGridView.AllowUserToDeleteRows = false;
+            this.nedelasTempGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.nedelasTempGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.pirmdienaColumn,
             this.otrdienaColumn,
             this.tresdienaColumn,
@@ -101,10 +104,11 @@
             this.piektdienaColumn,
             this.sestdienaColumn,
             this.svetdienaColumn});
-            this.dataGridView1.Location = new System.Drawing.Point(0, 27);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(743, 378);
-            this.dataGridView1.TabIndex = 1;
+            this.nedelasTempGridView.Location = new System.Drawing.Point(0, 27);
+            this.nedelasTempGridView.Name = "nedelasTempGridView";
+            this.nedelasTempGridView.ReadOnly = true;
+            this.nedelasTempGridView.Size = new System.Drawing.Size(743, 378);
+            this.nedelasTempGridView.TabIndex = 1;
             // 
             // pirmdienaColumn
             // 
@@ -190,6 +194,7 @@
             this.grafiskiButton.TabIndex = 5;
             this.grafiskiButton.Text = "Parādīt grafiski";
             this.grafiskiButton.UseVisualStyleBackColor = true;
+            this.grafiskiButton.Click += new System.EventHandler(this.grafiskiButton_Click);
             // 
             // MainWindow
             // 
@@ -202,7 +207,7 @@
             this.Controls.Add(this.valstsLabel);
             this.Controls.Add(this.pilsetaTextBox);
             this.Controls.Add(this.valstsTextBox);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.nedelasTempGridView);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
@@ -210,7 +215,7 @@
             this.Text = "Laikapstākļu plānotājs";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nedelasTempGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,7 +228,7 @@
         private System.Windows.Forms.ToolStripMenuItem fileExitMenu;
         private System.Windows.Forms.ToolStripMenuItem helpMenu;
         private System.Windows.Forms.ToolStripMenuItem helpAboutMenu;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView nedelasTempGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn pirmdienaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn otrdienaColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn tresdienaColumn;

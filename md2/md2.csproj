@@ -34,6 +34,7 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -57,6 +58,12 @@
     <Compile Include="GalvenaisLogs.Designer.cs">
       <DependentUpon>GalvenaisLogs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Grafiskais Logs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Grafiskais Logs.Designer.cs">
+      <DependentUpon>Grafiskais Logs.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="AboutLogs.resx">
@@ -64,6 +71,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="GalvenaisLogs.resx">
       <DependentUpon>GalvenaisLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Grafiskais Logs.resx">
+      <DependentUpon>Grafiskais Logs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

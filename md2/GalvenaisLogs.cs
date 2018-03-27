@@ -16,5 +16,17 @@ namespace md2
         {
             InitializeComponent();
         }
+
+        private void helpAboutMenu_Click(object sender, EventArgs e)
+        {
+            AboutLogs logs = new AboutLogs();
+            logs.Show();
+        }
+
+        private void grafiskiButton_Click(object sender, EventArgs e)
+        {
+            Grafiskais_Logs logs = new Grafiskais_Logs();
+            logs.Show();
+        }
     }
 }
