@@ -45,16 +45,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="LProgr.cs">
+    <Compile Include="AboutLogs.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LProgr.Designer.cs">
-      <DependentUpon>LProgr.cs</DependentUpon>
+    <Compile Include="AboutLogs.Designer.cs">
+      <DependentUpon>AboutLogs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GalvenaisLogs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GalvenaisLogs.Designer.cs">
+      <DependentUpon>GalvenaisLogs.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="LProgr.resx">
-      <DependentUpon>LProgr.cs</DependentUpon>
+    <EmbeddedResource Include="AboutLogs.resx">
+      <DependentUpon>AboutLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GalvenaisLogs.resx">
+      <DependentUpon>GalvenaisLogs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
