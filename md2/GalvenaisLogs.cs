@@ -28,5 +28,15 @@ namespace md2
             Grafiskais_Logs logs = new Grafiskais_Logs();
             logs.Show();
         }
+
+        private void apstiprinatButton_Click(object sender, EventArgs e)
+        {
+
+            //pievienota pagaidu funkcija, lai pievienotu mainigos
+            this.nedelasTempGridView.Rows.Add("viens", "divi");
+
+
+
+        }
     }
 }

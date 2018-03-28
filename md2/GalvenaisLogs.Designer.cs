@@ -87,7 +87,7 @@
             // helpAboutMenu
             // 
             this.helpAboutMenu.Name = "helpAboutMenu";
-            this.helpAboutMenu.Size = new System.Drawing.Size(180, 22);
+            this.helpAboutMenu.Size = new System.Drawing.Size(107, 22);
             this.helpAboutMenu.Text = "About";
             this.helpAboutMenu.Click += new System.EventHandler(this.helpAboutMenu_Click);
             // 
@@ -114,36 +114,43 @@
             // 
             this.pirmdienaColumn.HeaderText = "Pirmdiena";
             this.pirmdienaColumn.Name = "pirmdienaColumn";
+            this.pirmdienaColumn.ReadOnly = true;
             // 
             // otrdienaColumn
             // 
             this.otrdienaColumn.HeaderText = "Otrdiena";
             this.otrdienaColumn.Name = "otrdienaColumn";
+            this.otrdienaColumn.ReadOnly = true;
             // 
             // tresdienaColumn
             // 
             this.tresdienaColumn.HeaderText = "Trešdiena";
             this.tresdienaColumn.Name = "tresdienaColumn";
+            this.tresdienaColumn.ReadOnly = true;
             // 
             // ceturtdienaColumn
             // 
             this.ceturtdienaColumn.HeaderText = "Ceturtdiena";
             this.ceturtdienaColumn.Name = "ceturtdienaColumn";
+            this.ceturtdienaColumn.ReadOnly = true;
             // 
             // piektdienaColumn
             // 
             this.piektdienaColumn.HeaderText = "Piektdiena";
             this.piektdienaColumn.Name = "piektdienaColumn";
+            this.piektdienaColumn.ReadOnly = true;
             // 
             // sestdienaColumn
             // 
             this.sestdienaColumn.HeaderText = "Sestdiena";
             this.sestdienaColumn.Name = "sestdienaColumn";
+            this.sestdienaColumn.ReadOnly = true;
             // 
             // svetdienaColumn
             // 
             this.svetdienaColumn.HeaderText = "Svētdiena";
             this.svetdienaColumn.Name = "svetdienaColumn";
+            this.svetdienaColumn.ReadOnly = true;
             // 
             // valstsTextBox
             // 
@@ -185,6 +192,7 @@
             this.apstiprinatButton.TabIndex = 5;
             this.apstiprinatButton.Text = "Apstiprinat";
             this.apstiprinatButton.UseVisualStyleBackColor = true;
+            this.apstiprinatButton.Click += new System.EventHandler(this.apstiprinatButton_Click);
             // 
             // grafiskiButton
             // 
