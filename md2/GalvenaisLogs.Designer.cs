@@ -89,7 +89,7 @@
             this.helpAboutMenu.Name = "helpAboutMenu";
             this.helpAboutMenu.Size = new System.Drawing.Size(107, 22);
             this.helpAboutMenu.Text = "About";
-            this.helpAboutMenu.Click += new System.EventHandler(this.helpAboutMenu_Click);
+            this.helpAboutMenu.Click += new System.EventHandler(this.HelpAboutMenu_Click);
             // 
             // nedelasTempGridView
             // 
@@ -192,7 +192,7 @@
             this.apstiprinatButton.TabIndex = 5;
             this.apstiprinatButton.Text = "Apstiprinat";
             this.apstiprinatButton.UseVisualStyleBackColor = true;
-            this.apstiprinatButton.Click += new System.EventHandler(this.apstiprinatButton_Click);
+            this.apstiprinatButton.Click += new System.EventHandler(this.ApstiprinatButton_Click);
             // 
             // grafiskiButton
             // 
@@ -202,7 +202,7 @@
             this.grafiskiButton.TabIndex = 5;
             this.grafiskiButton.Text = "Parādīt grafiski";
             this.grafiskiButton.UseVisualStyleBackColor = true;
-            this.grafiskiButton.Click += new System.EventHandler(this.grafiskiButton_Click);
+            this.grafiskiButton.Click += new System.EventHandler(this.GrafiskiButton_Click);
             // 
             // MainWindow
             // 
