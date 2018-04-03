@@ -28,27 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.fileExitMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpAboutMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.nedelasTempGridView = new System.Windows.Forms.DataGridView();
-            this.pirmdienaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.otrdienaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tresdienaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ceturtdienaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.piektdienaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sestdienaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.svetdienaColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valstsTextBox = new System.Windows.Forms.TextBox();
             this.pilsetaTextBox = new System.Windows.Forms.TextBox();
             this.valstsLabel = new System.Windows.Forms.Label();
             this.pilsetaLabel = new System.Windows.Forms.Label();
             this.apstiprinatButton = new System.Windows.Forms.Button();
             this.grafiskiButton = new System.Windows.Forms.Button();
+            this.weatherDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nedelasTempGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weatherDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -93,64 +89,12 @@
             // 
             // nedelasTempGridView
             // 
-            this.nedelasTempGridView.AllowUserToAddRows = false;
-            this.nedelasTempGridView.AllowUserToDeleteRows = false;
+            this.nedelasTempGridView.AllowUserToOrderColumns = true;
             this.nedelasTempGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.nedelasTempGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.pirmdienaColumn,
-            this.otrdienaColumn,
-            this.tresdienaColumn,
-            this.ceturtdienaColumn,
-            this.piektdienaColumn,
-            this.sestdienaColumn,
-            this.svetdienaColumn});
             this.nedelasTempGridView.Location = new System.Drawing.Point(0, 27);
             this.nedelasTempGridView.Name = "nedelasTempGridView";
-            this.nedelasTempGridView.ReadOnly = true;
             this.nedelasTempGridView.Size = new System.Drawing.Size(743, 378);
             this.nedelasTempGridView.TabIndex = 1;
-            // 
-            // pirmdienaColumn
-            // 
-            this.pirmdienaColumn.HeaderText = "Pirmdiena";
-            this.pirmdienaColumn.Name = "pirmdienaColumn";
-            this.pirmdienaColumn.ReadOnly = true;
-            // 
-            // otrdienaColumn
-            // 
-            this.otrdienaColumn.HeaderText = "Otrdiena";
-            this.otrdienaColumn.Name = "otrdienaColumn";
-            this.otrdienaColumn.ReadOnly = true;
-            // 
-            // tresdienaColumn
-            // 
-            this.tresdienaColumn.HeaderText = "Trešdiena";
-            this.tresdienaColumn.Name = "tresdienaColumn";
-            this.tresdienaColumn.ReadOnly = true;
-            // 
-            // ceturtdienaColumn
-            // 
-            this.ceturtdienaColumn.HeaderText = "Ceturtdiena";
-            this.ceturtdienaColumn.Name = "ceturtdienaColumn";
-            this.ceturtdienaColumn.ReadOnly = true;
-            // 
-            // piektdienaColumn
-            // 
-            this.piektdienaColumn.HeaderText = "Piektdiena";
-            this.piektdienaColumn.Name = "piektdienaColumn";
-            this.piektdienaColumn.ReadOnly = true;
-            // 
-            // sestdienaColumn
-            // 
-            this.sestdienaColumn.HeaderText = "Sestdiena";
-            this.sestdienaColumn.Name = "sestdienaColumn";
-            this.sestdienaColumn.ReadOnly = true;
-            // 
-            // svetdienaColumn
-            // 
-            this.svetdienaColumn.HeaderText = "Svētdiena";
-            this.svetdienaColumn.Name = "svetdienaColumn";
-            this.svetdienaColumn.ReadOnly = true;
             // 
             // valstsTextBox
             // 
@@ -204,6 +148,10 @@
             this.grafiskiButton.UseVisualStyleBackColor = true;
             this.grafiskiButton.Click += new System.EventHandler(this.GrafiskiButton_Click);
             // 
+            // weatherDataBindingSource
+            // 
+            this.weatherDataBindingSource.DataSource = typeof(md2.WeatherData);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -224,6 +172,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nedelasTempGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weatherDataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,19 +186,16 @@
         private System.Windows.Forms.ToolStripMenuItem helpMenu;
         private System.Windows.Forms.ToolStripMenuItem helpAboutMenu;
         private System.Windows.Forms.DataGridView nedelasTempGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn pirmdienaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn otrdienaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tresdienaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ceturtdienaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn piektdienaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sestdienaColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn svetdienaColumn;
         private System.Windows.Forms.TextBox valstsTextBox;
         private System.Windows.Forms.TextBox pilsetaTextBox;
         private System.Windows.Forms.Label valstsLabel;
         private System.Windows.Forms.Label pilsetaLabel;
         private System.Windows.Forms.Button apstiprinatButton;
         private System.Windows.Forms.Button grafiskiButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn messageDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cntDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource weatherDataBindingSource;
     }
 }
 

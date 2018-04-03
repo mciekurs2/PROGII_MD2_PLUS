@@ -34,7 +34,7 @@ namespace md2
 
         private void ApstiprinatButton_Click(object sender, EventArgs e)
         {
-            var url = "http://api.openweathermap.org/data/2.5/weather?q=Cesis&mode=json&units=metric&APPID=02960f011b3cb23776734af3fa9fdf50";
+            /*var url = "http://api.openweathermap.org/data/2.5/weather?q=Cesis&mode=json&units=metric&APPID=02960f011b3cb23776734af3fa9fdf50";
             using (var webClient = new System.Net.WebClient())
             {
                 //dabu json as string
@@ -48,8 +48,31 @@ namespace md2
 
                 Console.WriteLine(pressure + " " + temp);
 
-            }
+            }*/
+
+            var city = pilsetaTextBox.Text;
+            GetJsonData(city);
+
 
         }
+
+        private void GetJsonData(string city)
+        {
+            var url = "http://api.openweathermap.org/data/2.5/forecast?q=" + city +
+                      "&mode=json&units=metric&APPID=02960f011b3cb23776734af3fa9fdf50";
+
+            using (var webClient = new System.Net.WebClient())
+            {
+                var jsonString = webClient.DownloadString(url);
+                var result = JsonConvert.DeserializeObject<WeatherData>(jsonString);
+                nedelasTempGridView.DataSource = result.List[0].Weather;
+
+
+
+            }
+
+
+        }
+
     }
 }
