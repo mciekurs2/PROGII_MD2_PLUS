@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
 
 namespace md2
 {
@@ -33,16 +34,21 @@ namespace md2
 
         private void ApstiprinatButton_Click(object sender, EventArgs e)
         {
+            var url = "http://api.openweathermap.org/data/2.5/weather?q=Cesis&mode=json&units=metric&APPID=02960f011b3cb23776734af3fa9fdf50";
+            using (var webClient = new System.Net.WebClient())
+            {
+                //dabu json as string
+                var json = webClient.DownloadString(url);
+                //now parse with json.net
 
-            //pievienota pagaidu funkcija, lai pievienotu mainigos
-            //this.nedelasTempGridView.Rows.Add("viens", "divi");
+                dynamic result = JsonConvert.DeserializeObject<dynamic>(json);
+                var temp = result.main.temp;
+                var pressure = result.name;
 
-            var weather = new WeatherData("London");
-            weather.CheckWeather();
-            Console.WriteLine(weather.Temp);
-            Console.WriteLine(weather.TempMax);
-            Console.WriteLine(weather.TempMin);
-            
+
+                Console.WriteLine(pressure + " " + temp);
+
+            }
 
         }
     }
