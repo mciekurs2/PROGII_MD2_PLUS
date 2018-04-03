@@ -13,13 +13,22 @@ namespace md2
 {
     public partial class MainWindow : Form
     {
+
+
         public MainWindow()
         {
             InitializeComponent();
+            pilsetaComboBox.DataSource = Enum.GetValues(typeof(pilsetasExample));
+
         }
+
+        //delegats
+        public delegate void Del(string city);
 
         private void HelpAboutMenu_Click(object sender, EventArgs e)
         {
+
+
             AboutLogs logs = new AboutLogs();
             logs.Show();
             
@@ -34,24 +43,10 @@ namespace md2
 
         private void ApstiprinatButton_Click(object sender, EventArgs e)
         {
-            /*var url = "http://api.openweathermap.org/data/2.5/weather?q=Cesis&mode=json&units=metric&APPID=02960f011b3cb23776734af3fa9fdf50";
-            using (var webClient = new System.Net.WebClient())
-            {
-                //dabu json as string
-                var json = webClient.DownloadString(url);
-                //now parse with json.net
-
-                dynamic result = JsonConvert.DeserializeObject<dynamic>(json);
-                var temp = result.main.temp;
-                var pressure = result.name;
-
-
-                Console.WriteLine(pressure + " " + temp);
-
-            }*/
-
-            var city = pilsetaTextBox.Text;
-            GetJsonData(city);
+        
+            var city = pilsetaComboBox.SelectedItem.ToString();
+            Del funk = GetJsonData;
+            funk(city);
 
 
         }
@@ -68,10 +63,17 @@ namespace md2
                 nedelasTempGridView.DataSource = result.List[0].Weather;
 
 
-
             }
 
 
+        }
+        
+        public enum pilsetasExample
+        {
+            Cesis = 0,
+            Riga = 1,
+            Valmiera = 2,
+            Liepaja = 3
         }
 
     }

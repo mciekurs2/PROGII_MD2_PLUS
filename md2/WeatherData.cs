@@ -11,6 +11,7 @@ namespace md2
 {
     public class WeatherData
     {
+
         public string Cod { get; set; }
         public double Message { get; set; }
         public long Cnt { get; set; }
@@ -18,7 +19,7 @@ namespace md2
         public City City { get; set; }
     }
 
-    public partial class City
+    public class City
     {
         public long Id { get; set; }
         public string Name { get; set; }
@@ -27,13 +28,13 @@ namespace md2
         public long Population { get; set; }
     }
 
-    public partial class Coord
+    public class Coord
     {
         public double Lat { get; set; }
         public double Lon { get; set; }
     }
 
-    public partial class MainWeatherList
+    public class MainWeatherList
     {
         public long Dt { get; set; }
         public ListMain Main { get; set; }
@@ -45,12 +46,12 @@ namespace md2
         public Rain Rain { get; set; }
     }
 
-    public partial class Clouds
+    public class Clouds
     {
         public long All { get; set; }
     }
 
-    public partial class ListMain
+    public class ListMain
     {
         public double Temp { get; set; }
         public double TempMin { get; set; }
@@ -62,17 +63,17 @@ namespace md2
         public double TempKf { get; set; }
     }
 
-    public partial class Rain
+    public class Rain
     {
         public double? The3H { get; set; }
     }
 
-    public partial class Sys
+    public class Sys
     {
         public string Pod { get; set; }
     }
 
-    public partial class Weather
+    public class Weather
     {
         public long Id { get; set; }
         public string Main { get; set; }
@@ -80,7 +81,7 @@ namespace md2
         public string Icon { get; set; }
     }
 
-    public partial class Wind
+    public class Wind
     {
         public double Speed { get; set; }
         public double Deg { get; set; }

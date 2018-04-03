@@ -36,12 +36,12 @@
             this.helpAboutMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.nedelasTempGridView = new System.Windows.Forms.DataGridView();
             this.valstsTextBox = new System.Windows.Forms.TextBox();
-            this.pilsetaTextBox = new System.Windows.Forms.TextBox();
             this.valstsLabel = new System.Windows.Forms.Label();
             this.pilsetaLabel = new System.Windows.Forms.Label();
             this.apstiprinatButton = new System.Windows.Forms.Button();
             this.grafiskiButton = new System.Windows.Forms.Button();
             this.weatherDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.pilsetaComboBox = new System.Windows.Forms.ComboBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nedelasTempGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.weatherDataBindingSource)).BeginInit();
@@ -89,10 +89,11 @@
             // 
             // nedelasTempGridView
             // 
-            this.nedelasTempGridView.AllowUserToOrderColumns = true;
+            this.nedelasTempGridView.AllowUserToDeleteRows = false;
             this.nedelasTempGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.nedelasTempGridView.Location = new System.Drawing.Point(0, 27);
             this.nedelasTempGridView.Name = "nedelasTempGridView";
+            this.nedelasTempGridView.ReadOnly = true;
             this.nedelasTempGridView.Size = new System.Drawing.Size(743, 378);
             this.nedelasTempGridView.TabIndex = 1;
             // 
@@ -102,13 +103,6 @@
             this.valstsTextBox.Name = "valstsTextBox";
             this.valstsTextBox.Size = new System.Drawing.Size(132, 20);
             this.valstsTextBox.TabIndex = 2;
-            // 
-            // pilsetaTextBox
-            // 
-            this.pilsetaTextBox.Location = new System.Drawing.Point(271, 418);
-            this.pilsetaTextBox.Name = "pilsetaTextBox";
-            this.pilsetaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.pilsetaTextBox.TabIndex = 3;
             // 
             // valstsLabel
             // 
@@ -152,16 +146,24 @@
             // 
             this.weatherDataBindingSource.DataSource = typeof(md2.WeatherData);
             // 
+            // pilsetaComboBox
+            // 
+            this.pilsetaComboBox.FormattingEnabled = true;
+            this.pilsetaComboBox.Location = new System.Drawing.Point(271, 418);
+            this.pilsetaComboBox.Name = "pilsetaComboBox";
+            this.pilsetaComboBox.Size = new System.Drawing.Size(121, 21);
+            this.pilsetaComboBox.TabIndex = 6;
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(743, 450);
+            this.Controls.Add(this.pilsetaComboBox);
             this.Controls.Add(this.grafiskiButton);
             this.Controls.Add(this.apstiprinatButton);
             this.Controls.Add(this.pilsetaLabel);
             this.Controls.Add(this.valstsLabel);
-            this.Controls.Add(this.pilsetaTextBox);
             this.Controls.Add(this.valstsTextBox);
             this.Controls.Add(this.nedelasTempGridView);
             this.Controls.Add(this.menuStrip1);
@@ -187,15 +189,12 @@
         private System.Windows.Forms.ToolStripMenuItem helpAboutMenu;
         private System.Windows.Forms.DataGridView nedelasTempGridView;
         private System.Windows.Forms.TextBox valstsTextBox;
-        private System.Windows.Forms.TextBox pilsetaTextBox;
         private System.Windows.Forms.Label valstsLabel;
         private System.Windows.Forms.Label pilsetaLabel;
         private System.Windows.Forms.Button apstiprinatButton;
         private System.Windows.Forms.Button grafiskiButton;
-        private System.Windows.Forms.DataGridViewTextBoxColumn messageDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cntDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource weatherDataBindingSource;
+        private System.Windows.Forms.ComboBox pilsetaComboBox;
     }
 }
 
