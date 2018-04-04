@@ -42,6 +42,9 @@
             this.grafiskiButton = new System.Windows.Forms.Button();
             this.weatherDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pilsetaComboBox = new System.Windows.Forms.ComboBox();
+            this.currentTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.temp = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nedelasTempGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.weatherDataBindingSource)).BeginInit();
@@ -91,9 +94,12 @@
             // 
             this.nedelasTempGridView.AllowUserToDeleteRows = false;
             this.nedelasTempGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.nedelasTempGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.currentTime,
+            this.temp,
+            this.wDesc});
             this.nedelasTempGridView.Location = new System.Drawing.Point(0, 27);
             this.nedelasTempGridView.Name = "nedelasTempGridView";
-            this.nedelasTempGridView.ReadOnly = true;
             this.nedelasTempGridView.Size = new System.Drawing.Size(743, 378);
             this.nedelasTempGridView.TabIndex = 1;
             // 
@@ -142,10 +148,6 @@
             this.grafiskiButton.UseVisualStyleBackColor = true;
             this.grafiskiButton.Click += new System.EventHandler(this.GrafiskiButton_Click);
             // 
-            // weatherDataBindingSource
-            // 
-            this.weatherDataBindingSource.DataSource = typeof(md2.WeatherData);
-            // 
             // pilsetaComboBox
             // 
             this.pilsetaComboBox.FormattingEnabled = true;
@@ -153,6 +155,21 @@
             this.pilsetaComboBox.Name = "pilsetaComboBox";
             this.pilsetaComboBox.Size = new System.Drawing.Size(121, 21);
             this.pilsetaComboBox.TabIndex = 6;
+            // 
+            // currentTime
+            // 
+            this.currentTime.HeaderText = "Time";
+            this.currentTime.Name = "currentTime";
+            // 
+            // temp
+            // 
+            this.temp.HeaderText = "Temp";
+            this.temp.Name = "temp";
+            // 
+            // wDesc
+            // 
+            this.wDesc.HeaderText = "Desc";
+            this.wDesc.Name = "wDesc";
             // 
             // MainWindow
             // 
@@ -171,6 +188,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainWindow";
             this.Text = "Laikapstākļu plānotājs";
+            this.Load += new System.EventHandler(this.MainWindow_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nedelasTempGridView)).EndInit();
@@ -195,6 +213,9 @@
         private System.Windows.Forms.Button grafiskiButton;
         private System.Windows.Forms.BindingSource weatherDataBindingSource;
         private System.Windows.Forms.ComboBox pilsetaComboBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn currentTime;
+        private System.Windows.Forms.DataGridViewTextBoxColumn temp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wDesc;
     }
 }
 

@@ -13,8 +13,6 @@ namespace md2
 {
     public partial class MainWindow : Form
     {
-
-
         public MainWindow()
         {
             InitializeComponent();
@@ -46,6 +44,8 @@ namespace md2
         
             var city = pilsetaComboBox.SelectedItem.ToString();
             Del funk = GetJsonData;
+            nedelasTempGridView.Rows.Clear();
+            nedelasTempGridView.Refresh();
             funk(city);
 
 
@@ -60,21 +60,45 @@ namespace md2
             {
                 var jsonString = webClient.DownloadString(url);
                 var result = JsonConvert.DeserializeObject<WeatherData>(jsonString);
-                nedelasTempGridView.DataSource = result.List[0].Weather;
+                //nedelasTempGridView.DataSource = result.List[0].Weather;
+                //Console.WriteLine(result.List[0].Weather);
 
+                WeatherData data = JsonConvert.DeserializeObject<WeatherData>(jsonString);
+               //Console.WriteLine("Current Temp: " + data.List[26].Weather[0].Description);
 
+                nedelasTempGridView.RowHeadersWidth = 170;
+                DateTime dTime;
+
+                for (var i = 0; i < 38; i++)
+                {
+                    DataGridViewRow row = (DataGridViewRow) nedelasTempGridView.Rows[i].Clone();
+                    dTime = Convert.ToDateTime(data.List[i].Dt_txt);
+
+                    row.HeaderCell.Value = dTime.DayOfWeek.ToString();
+                    row.Cells[0].Value = dTime.ToString("HH:mm");
+                    row.Cells[1].Value = data.List[i].Main.Temp + " °C";
+                    row.Cells[2].Value = data.List[i].Weather[0].Description;
+                    nedelasTempGridView.Rows.Add(row);
+                }
+
+                //DateTime dTime = Convert.ToDateTime(data.List[0].Dt_txt);
+                //Console.WriteLine(dTime.DayOfWeek);
             }
-
-
         }
         
+        //pagaidu variants, droši vien tik izmantota cita pieeja, lai izmantotu enum
         public enum pilsetasExample
         {
-            Cesis = 0,
-            Riga = 1,
-            Valmiera = 2,
-            Liepaja = 3
+            Riga = 0,
+            London = 1,
+            Paris = 2,
+            Russia = 3
         }
 
+        private void MainWindow_Load(object sender, EventArgs e)
+        {
+            var city = pilsetaComboBox.SelectedItem.ToString();
+            GetJsonData(city);
+        }
     }
 }

@@ -42,7 +42,7 @@ namespace md2
         public Clouds Clouds { get; set; }
         public Wind Wind { get; set; }
         public Sys Sys { get; set; }
-        public System.DateTimeOffset DtTxt { get; set; }
+        public string Dt_txt { get; set; }
         public Rain Rain { get; set; }
     }
 
