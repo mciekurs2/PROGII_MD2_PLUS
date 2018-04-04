@@ -78,6 +78,8 @@ namespace md2
                     row.Cells[0].Value = dTime.ToString("HH:mm");
                     row.Cells[1].Value = data.List[i].Main.Temp + " °C";
                     row.Cells[2].Value = data.List[i].Weather[0].Description;
+                    row.Cells[3].Value = data.List[i].Main.Humidity;
+                    row.Cells[4].Value = data.List[i].Wind.Speed + " m/s";
                     nedelasTempGridView.Rows.Add(row);
                 }
 
@@ -92,7 +94,7 @@ namespace md2
             Riga = 0,
             London = 1,
             Paris = 2,
-            Russia = 3
+            Moscow = 3
         }
 
         private void MainWindow_Load(object sender, EventArgs e)

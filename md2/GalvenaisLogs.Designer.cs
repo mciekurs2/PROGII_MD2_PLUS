@@ -45,6 +45,8 @@
             this.currentTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.temp = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.humidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.wind = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nedelasTempGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.weatherDataBindingSource)).BeginInit();
@@ -97,7 +99,9 @@
             this.nedelasTempGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.currentTime,
             this.temp,
-            this.wDesc});
+            this.wDesc,
+            this.humidity,
+            this.wind});
             this.nedelasTempGridView.Location = new System.Drawing.Point(0, 27);
             this.nedelasTempGridView.Name = "nedelasTempGridView";
             this.nedelasTempGridView.Size = new System.Drawing.Size(743, 378);
@@ -171,6 +175,16 @@
             this.wDesc.HeaderText = "Desc";
             this.wDesc.Name = "wDesc";
             // 
+            // humidity
+            // 
+            this.humidity.HeaderText = "Humidity";
+            this.humidity.Name = "humidity";
+            // 
+            // wind
+            // 
+            this.wind.HeaderText = "Wind";
+            this.wind.Name = "wind";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,6 +230,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn currentTime;
         private System.Windows.Forms.DataGridViewTextBoxColumn temp;
         private System.Windows.Forms.DataGridViewTextBoxColumn wDesc;
+        private System.Windows.Forms.DataGridViewTextBoxColumn humidity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn wind;
     }
 }
 
