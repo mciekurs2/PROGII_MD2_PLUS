@@ -59,11 +59,11 @@ namespace md2
             using (var webClient = new System.Net.WebClient())
             {
                 var jsonString = webClient.DownloadString(url);
-                var result = JsonConvert.DeserializeObject<WeatherData>(jsonString);
+                var result = JsonConvert.DeserializeObject<WeatherDataWeekly>(jsonString);
                 //nedelasTempGridView.DataSource = result.List[0].Weather;
                 //Console.WriteLine(result.List[0].Weather);
 
-                WeatherData data = JsonConvert.DeserializeObject<WeatherData>(jsonString);
+                WeatherDataWeekly data = JsonConvert.DeserializeObject<WeatherDataWeekly>(jsonString);
                //Console.WriteLine("Current Temp: " + data.List[26].Weather[0].Description);
 
                 nedelasTempGridView.RowHeadersWidth = 170;
@@ -83,6 +83,9 @@ namespace md2
                     nedelasTempGridView.Rows.Add(row);
                 }
 
+                //paraada valsts kodu
+                valstsKods.Text = data.City.Country;
+
                 //DateTime dTime = Convert.ToDateTime(data.List[0].Dt_txt);
                 //Console.WriteLine(dTime.DayOfWeek);
             }
@@ -101,6 +104,11 @@ namespace md2
         {
             var city = pilsetaComboBox.SelectedItem.ToString();
             GetJsonData(city);
+        }
+
+        private void fileExitMenu_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

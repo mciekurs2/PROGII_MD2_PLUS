@@ -9,7 +9,7 @@ using Newtonsoft.Json.Converters;
 
 namespace md2
 {
-    public class WeatherData
+    public class WeatherDataWeekly
     {
 
         public string Cod { get; set; }
