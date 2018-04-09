@@ -49,6 +49,8 @@
             this.humidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wind = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cityListBox = new System.Windows.Forms.ListBox();
+            this.addButton = new System.Windows.Forms.Button();
+            this.removeButton = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.weatherDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -65,7 +67,7 @@
             this.helpMenu});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(976, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(874, 24);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -117,9 +119,11 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.removeButton);
+            this.splitContainer1.Panel2.Controls.Add(this.addButton);
             this.splitContainer1.Panel2.Controls.Add(this.cityListBox);
-            this.splitContainer1.Size = new System.Drawing.Size(976, 426);
-            this.splitContainer1.SplitterDistance = 645;
+            this.splitContainer1.Size = new System.Drawing.Size(874, 426);
+            this.splitContainer1.SplitterDistance = 646;
             this.splitContainer1.TabIndex = 1;
             // 
             // valstsKods
@@ -141,7 +145,7 @@
             // 
             // grafiskiButton
             // 
-            this.grafiskiButton.Location = new System.Drawing.Point(509, 395);
+            this.grafiskiButton.Location = new System.Drawing.Point(506, 395);
             this.grafiskiButton.Name = "grafiskiButton";
             this.grafiskiButton.Size = new System.Drawing.Size(131, 23);
             this.grafiskiButton.TabIndex = 11;
@@ -190,7 +194,7 @@
             this.nedelasTempGridView.Location = new System.Drawing.Point(3, 3);
             this.nedelasTempGridView.Name = "nedelasTempGridView";
             this.nedelasTempGridView.ReadOnly = true;
-            this.nedelasTempGridView.Size = new System.Drawing.Size(639, 381);
+            this.nedelasTempGridView.Size = new System.Drawing.Size(640, 381);
             this.nedelasTempGridView.TabIndex = 8;
             // 
             // currentTime
@@ -229,16 +233,34 @@
             this.cityListBox.FormattingEnabled = true;
             this.cityListBox.Location = new System.Drawing.Point(3, 3);
             this.cityListBox.Name = "cityListBox";
-            this.cityListBox.Size = new System.Drawing.Size(321, 381);
+            this.cityListBox.Size = new System.Drawing.Size(218, 381);
             this.cityListBox.TabIndex = 0;
             this.cityListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cityListBox_DrawItem);
             this.cityListBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.cityListBox_MeasureItem);
+            // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(29, 395);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 1;
+            this.addButton.Text = "Add City";
+            this.addButton.UseVisualStyleBackColor = true;
+            // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(124, 395);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(75, 23);
+            this.removeButton.TabIndex = 2;
+            this.removeButton.Text = "RemoveCity";
+            this.removeButton.UseVisualStyleBackColor = true;
             // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(976, 450);
+            this.ClientSize = new System.Drawing.Size(874, 450);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -282,6 +304,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn humidity;
         private System.Windows.Forms.DataGridViewTextBoxColumn wind;
         private System.Windows.Forms.ListBox cityListBox;
+        private System.Windows.Forms.Button removeButton;
+        private System.Windows.Forms.Button addButton;
     }
 }
 
