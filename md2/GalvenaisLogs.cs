@@ -119,7 +119,7 @@ namespace md2
             var dbCon = new OleDbConnection
             {
                 ConnectionString =
-                    @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Users\Martin\source\repos\PROGII_MD2_PLUS\FavoriteCities.mdb"
+                    @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Path.GetFullPath(@"..\..\..\") + "FavoriteCities.mdb"
             };
             dbCon.Open();
 
@@ -162,7 +162,7 @@ namespace md2
                 var sample = new CityAdapter(Image.FromStream(ms), cityName, tempCur);
                 cityListBox.Items.Add(sample);
             }
-
+           
             dbCon.Close();
 
         }
