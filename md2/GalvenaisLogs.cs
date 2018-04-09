@@ -16,7 +16,7 @@ namespace md2
         public MainWindow()
         {
             InitializeComponent();
-            pilsetaComboBox.DataSource = Enum.GetValues(typeof(pilsetasExample));
+            pilsetaComboBox.DataSource = Enum.GetValues(typeof(PilsetasExample));
 
         }
 
@@ -66,7 +66,7 @@ namespace md2
                 WeatherDataWeekly data = JsonConvert.DeserializeObject<WeatherDataWeekly>(jsonString);
                //Console.WriteLine("Current Temp: " + data.List[26].Weather[0].Description);
 
-                nedelasTempGridView.RowHeadersWidth = 170;
+                nedelasTempGridView.RowHeadersWidth = 120;
                 DateTime dTime;
 
                 for (var i = 0; i < 38; i++)
@@ -92,7 +92,7 @@ namespace md2
         }
         
         //pagaidu variants, droši vien tik izmantota cita pieeja, lai izmantotu enum
-        public enum pilsetasExample
+        public enum PilsetasExample
         {
             Riga = 0,
             London = 1,
