@@ -48,7 +48,7 @@
             this.wDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.humidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wind = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.cityListBox = new System.Windows.Forms.ListBox();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.weatherDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -117,7 +117,7 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.listView1);
+            this.splitContainer1.Panel2.Controls.Add(this.cityListBox);
             this.splitContainer1.Size = new System.Drawing.Size(976, 426);
             this.splitContainer1.SplitterDistance = 645;
             this.splitContainer1.TabIndex = 1;
@@ -125,7 +125,7 @@
             // valstsKods
             // 
             this.valstsKods.AutoSize = true;
-            this.valstsKods.Location = new System.Drawing.Point(64, 401);
+            this.valstsKods.Location = new System.Drawing.Point(62, 401);
             this.valstsKods.Name = "valstsKods";
             this.valstsKods.Size = new System.Drawing.Size(54, 13);
             this.valstsKods.TabIndex = 14;
@@ -134,14 +134,14 @@
             // pilsetaComboBox
             // 
             this.pilsetaComboBox.FormattingEnabled = true;
-            this.pilsetaComboBox.Location = new System.Drawing.Point(184, 397);
+            this.pilsetaComboBox.Location = new System.Drawing.Point(182, 397);
             this.pilsetaComboBox.Name = "pilsetaComboBox";
             this.pilsetaComboBox.Size = new System.Drawing.Size(121, 21);
             this.pilsetaComboBox.TabIndex = 13;
             // 
             // grafiskiButton
             // 
-            this.grafiskiButton.Location = new System.Drawing.Point(511, 395);
+            this.grafiskiButton.Location = new System.Drawing.Point(509, 395);
             this.grafiskiButton.Name = "grafiskiButton";
             this.grafiskiButton.Size = new System.Drawing.Size(131, 23);
             this.grafiskiButton.TabIndex = 11;
@@ -151,7 +151,7 @@
             // 
             // apstiprinatButton
             // 
-            this.apstiprinatButton.Location = new System.Drawing.Point(427, 395);
+            this.apstiprinatButton.Location = new System.Drawing.Point(425, 395);
             this.apstiprinatButton.Name = "apstiprinatButton";
             this.apstiprinatButton.Size = new System.Drawing.Size(75, 23);
             this.apstiprinatButton.TabIndex = 12;
@@ -162,7 +162,7 @@
             // pilsetaLabel
             // 
             this.pilsetaLabel.AutoSize = true;
-            this.pilsetaLabel.Location = new System.Drawing.Point(151, 401);
+            this.pilsetaLabel.Location = new System.Drawing.Point(149, 401);
             this.pilsetaLabel.Name = "pilsetaLabel";
             this.pilsetaLabel.Size = new System.Drawing.Size(27, 13);
             this.pilsetaLabel.TabIndex = 9;
@@ -171,7 +171,7 @@
             // valstsLabel
             // 
             this.valstsLabel.AutoSize = true;
-            this.valstsLabel.Location = new System.Drawing.Point(12, 401);
+            this.valstsLabel.Location = new System.Drawing.Point(10, 401);
             this.valstsLabel.Name = "valstsLabel";
             this.valstsLabel.Size = new System.Drawing.Size(46, 13);
             this.valstsLabel.TabIndex = 10;
@@ -187,10 +187,10 @@
             this.wDesc,
             this.humidity,
             this.wind});
-            this.nedelasTempGridView.Location = new System.Drawing.Point(3, 0);
+            this.nedelasTempGridView.Location = new System.Drawing.Point(3, 3);
             this.nedelasTempGridView.Name = "nedelasTempGridView";
             this.nedelasTempGridView.ReadOnly = true;
-            this.nedelasTempGridView.Size = new System.Drawing.Size(639, 390);
+            this.nedelasTempGridView.Size = new System.Drawing.Size(639, 381);
             this.nedelasTempGridView.TabIndex = 8;
             // 
             // currentTime
@@ -223,13 +223,16 @@
             this.wind.Name = "wind";
             this.wind.ReadOnly = true;
             // 
-            // listView1
+            // cityListBox
             // 
-            this.listView1.Location = new System.Drawing.Point(3, 0);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(321, 390);
-            this.listView1.TabIndex = 0;
-            this.listView1.UseCompatibleStateImageBehavior = false;
+            this.cityListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
+            this.cityListBox.FormattingEnabled = true;
+            this.cityListBox.Location = new System.Drawing.Point(3, 3);
+            this.cityListBox.Name = "cityListBox";
+            this.cityListBox.Size = new System.Drawing.Size(321, 381);
+            this.cityListBox.TabIndex = 0;
+            this.cityListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cityListBox_DrawItem);
+            this.cityListBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.cityListBox_MeasureItem);
             // 
             // MainWindow
             // 
@@ -278,7 +281,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn wDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn humidity;
         private System.Windows.Forms.DataGridViewTextBoxColumn wind;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListBox cityListBox;
     }
 }
 
