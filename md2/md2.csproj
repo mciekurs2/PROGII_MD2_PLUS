@@ -67,6 +67,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FavoriteCitiesDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Functions.cs" />
     <Compile Include="GalvenaisLogs.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +105,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="FavoriteCitiesDataSet.xsc">
       <DependentUpon>FavoriteCitiesDataSet.xsd</DependentUpon>

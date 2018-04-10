@@ -1,6 +1,6 @@
 ﻿namespace md2
 {
-    partial class Add_City
+    partial class AddCity
     {
         /// <summary>
         /// Required designer variable.
@@ -57,6 +57,7 @@
             this.confirmButtonFavorite.TabIndex = 2;
             this.confirmButtonFavorite.Text = "Confirm";
             this.confirmButtonFavorite.UseVisualStyleBackColor = true;
+            this.confirmButtonFavorite.Click += new System.EventHandler(this.confirmButtonFavorite_Click);
             // 
             // Add_City
             // 
@@ -68,7 +69,7 @@
             this.Controls.Add(this.texBoxFavorite);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "Add_City";
+            this.Name = "AddCity";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Add_City";
             this.ResumeLayout(false);

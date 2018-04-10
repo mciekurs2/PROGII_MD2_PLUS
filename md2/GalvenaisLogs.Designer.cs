@@ -47,6 +47,7 @@
             this.wDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.humidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wind = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.refreshButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
             this.addButton = new System.Windows.Forms.Button();
             this.cityListBox = new System.Windows.Forms.ListBox();
@@ -84,7 +85,7 @@
             this.fileExitMenu.Name = "fileExitMenu";
             this.fileExitMenu.Size = new System.Drawing.Size(92, 22);
             this.fileExitMenu.Text = "Exit";
-            this.fileExitMenu.Click += new System.EventHandler(this.fileExitMenu_Click);
+            this.fileExitMenu.Click += new System.EventHandler(this.FileExitMenu_Click);
             // 
             // helpMenu
             // 
@@ -119,6 +120,7 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.refreshButton);
             this.splitContainer1.Panel2.Controls.Add(this.removeButton);
             this.splitContainer1.Panel2.Controls.Add(this.addButton);
             this.splitContainer1.Panel2.Controls.Add(this.cityListBox);
@@ -227,24 +229,34 @@
             this.wind.Name = "wind";
             this.wind.ReadOnly = true;
             // 
+            // refreshButton
+            // 
+            this.refreshButton.Location = new System.Drawing.Point(158, 395);
+            this.refreshButton.Name = "refreshButton";
+            this.refreshButton.Size = new System.Drawing.Size(56, 23);
+            this.refreshButton.TabIndex = 3;
+            this.refreshButton.Text = "Refresh";
+            this.refreshButton.UseVisualStyleBackColor = true;
+            this.refreshButton.Click += new System.EventHandler(this.RefreshButton_Click);
+            // 
             // removeButton
             // 
-            this.removeButton.Location = new System.Drawing.Point(124, 395);
+            this.removeButton.Location = new System.Drawing.Point(77, 395);
             this.removeButton.Name = "removeButton";
             this.removeButton.Size = new System.Drawing.Size(75, 23);
             this.removeButton.TabIndex = 2;
-            this.removeButton.Text = "RemoveCity";
+            this.removeButton.Text = "Remove City";
             this.removeButton.UseVisualStyleBackColor = true;
             // 
             // addButton
             // 
-            this.addButton.Location = new System.Drawing.Point(29, 395);
+            this.addButton.Location = new System.Drawing.Point(12, 396);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.Size = new System.Drawing.Size(59, 23);
             this.addButton.TabIndex = 1;
             this.addButton.Text = "Add City";
             this.addButton.UseVisualStyleBackColor = true;
-            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            this.addButton.Click += new System.EventHandler(this.AddButton_Click);
             // 
             // cityListBox
             // 
@@ -254,8 +266,8 @@
             this.cityListBox.Name = "cityListBox";
             this.cityListBox.Size = new System.Drawing.Size(218, 381);
             this.cityListBox.TabIndex = 0;
-            this.cityListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cityListBox_DrawItem);
-            this.cityListBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.cityListBox_MeasureItem);
+            this.cityListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.CityListBox_DrawItem);
+            this.cityListBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.CityListBox_MeasureItem);
             // 
             // MainWindow
             // 
@@ -305,9 +317,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn wDesc;
         private System.Windows.Forms.DataGridViewTextBoxColumn humidity;
         private System.Windows.Forms.DataGridViewTextBoxColumn wind;
-        private System.Windows.Forms.ListBox cityListBox;
         private System.Windows.Forms.Button removeButton;
         private System.Windows.Forms.Button addButton;
+        public System.Windows.Forms.ListBox cityListBox;
+        private System.Windows.Forms.Button refreshButton;
     }
 }
 
