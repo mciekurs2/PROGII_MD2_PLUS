@@ -62,7 +62,9 @@
             this.ClientSize = new System.Drawing.Size(281, 194);
             this.Controls.Add(this.veidotajsLabel);
             this.Controls.Add(this.nosaukumsLabel);
+            this.MaximizeBox = false;
             this.Name = "AboutLogs";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "AboutLogs";
             this.ResumeLayout(false);
             this.PerformLayout();

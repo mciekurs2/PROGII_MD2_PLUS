@@ -34,7 +34,6 @@
             this.fileExitMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpMenu = new System.Windows.Forms.ToolStripMenuItem();
             this.helpAboutMenu = new System.Windows.Forms.ToolStripMenuItem();
-            this.weatherDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.valstsKods = new System.Windows.Forms.Label();
             this.pilsetaComboBox = new System.Windows.Forms.ComboBox();
@@ -48,16 +47,17 @@
             this.wDesc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.humidity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.wind = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityListBox = new System.Windows.Forms.ListBox();
-            this.addButton = new System.Windows.Forms.Button();
             this.removeButton = new System.Windows.Forms.Button();
+            this.addButton = new System.Windows.Forms.Button();
+            this.cityListBox = new System.Windows.Forms.ListBox();
+            this.weatherDataBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.weatherDataBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nedelasTempGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weatherDataBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -227,6 +227,25 @@
             this.wind.Name = "wind";
             this.wind.ReadOnly = true;
             // 
+            // removeButton
+            // 
+            this.removeButton.Location = new System.Drawing.Point(124, 395);
+            this.removeButton.Name = "removeButton";
+            this.removeButton.Size = new System.Drawing.Size(75, 23);
+            this.removeButton.TabIndex = 2;
+            this.removeButton.Text = "RemoveCity";
+            this.removeButton.UseVisualStyleBackColor = true;
+            // 
+            // addButton
+            // 
+            this.addButton.Location = new System.Drawing.Point(29, 395);
+            this.addButton.Name = "addButton";
+            this.addButton.Size = new System.Drawing.Size(75, 23);
+            this.addButton.TabIndex = 1;
+            this.addButton.Text = "Add City";
+            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.Click += new System.EventHandler(this.addButton_Click);
+            // 
             // cityListBox
             // 
             this.cityListBox.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawVariable;
@@ -238,24 +257,6 @@
             this.cityListBox.DrawItem += new System.Windows.Forms.DrawItemEventHandler(this.cityListBox_DrawItem);
             this.cityListBox.MeasureItem += new System.Windows.Forms.MeasureItemEventHandler(this.cityListBox_MeasureItem);
             // 
-            // addButton
-            // 
-            this.addButton.Location = new System.Drawing.Point(29, 395);
-            this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(75, 23);
-            this.addButton.TabIndex = 1;
-            this.addButton.Text = "Add City";
-            this.addButton.UseVisualStyleBackColor = true;
-            // 
-            // removeButton
-            // 
-            this.removeButton.Location = new System.Drawing.Point(124, 395);
-            this.removeButton.Name = "removeButton";
-            this.removeButton.Size = new System.Drawing.Size(75, 23);
-            this.removeButton.TabIndex = 2;
-            this.removeButton.Text = "RemoveCity";
-            this.removeButton.UseVisualStyleBackColor = true;
-            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -265,18 +266,19 @@
             this.Controls.Add(this.menuStrip1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "MainWindow";
             this.Text = "Laikapstākļu plānotājs";
             this.Load += new System.EventHandler(this.MainWindow_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.weatherDataBindingSource)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.nedelasTempGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.weatherDataBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

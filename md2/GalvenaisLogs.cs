@@ -30,16 +30,16 @@ namespace md2
         {
 
 
-            AboutLogs logs = new AboutLogs();
-            logs.Show();
+            var logs = new AboutLogs();
+            logs.ShowDialog();
             
 
         }
 
         private void GrafiskiButton_Click(object sender, EventArgs e)
         {
-            Grafiskais_Logs logs = new Grafiskais_Logs();
-            logs.Show(); //izmanto dialogShow, lai neļautu izveleties iepriekshejo logu
+            var logs = new Grafiskais_Logs();
+            logs.ShowDialog(); //izmanto dialogShow, lai neļautu izveleties iepriekshejo logu
         }
 
         private void ApstiprinatButton_Click(object sender, EventArgs e)
@@ -188,6 +188,14 @@ namespace md2
             cityAdapter.DrawItem(e.Graphics, e.Bounds, this.Font, false);
 
 
+        }
+
+        //open AddCity window
+        private void addButton_Click(object sender, EventArgs e)
+        {
+            var cityForm = new Add_City();
+            cityForm.ShowDialog();
+            
         }
     }
 }

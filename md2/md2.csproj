@@ -55,6 +55,12 @@
     <Compile Include="AboutLogs.Designer.cs">
       <DependentUpon>AboutLogs.cs</DependentUpon>
     </Compile>
+    <Compile Include="AddCityForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddCityForm.Designer.cs">
+      <DependentUpon>AddCityForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="CityAdapter.cs" />
     <Compile Include="FavoriteCitiesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -80,6 +86,9 @@
     <Compile Include="WeatherDataWeekly.cs" />
     <EmbeddedResource Include="AboutLogs.resx">
       <DependentUpon>AboutLogs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddCityForm.resx">
+      <DependentUpon>AddCityForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="GalvenaisLogs.resx">
       <DependentUpon>GalvenaisLogs.cs</DependentUpon>
