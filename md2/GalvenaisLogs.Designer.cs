@@ -247,6 +247,7 @@
             this.removeButton.TabIndex = 2;
             this.removeButton.Text = "Remove City";
             this.removeButton.UseVisualStyleBackColor = true;
+            this.removeButton.Click += new System.EventHandler(this.RemoveButton_Click);
             // 
             // addButton
             // 

@@ -57,7 +57,7 @@
             this.confirmButtonFavorite.TabIndex = 2;
             this.confirmButtonFavorite.Text = "Confirm";
             this.confirmButtonFavorite.UseVisualStyleBackColor = true;
-            this.confirmButtonFavorite.Click += new System.EventHandler(this.confirmButtonFavorite_Click);
+            this.confirmButtonFavorite.Click += new System.EventHandler(this.ConfirmButtonFavorite_Click);
             // 
             // Add_City
             // 

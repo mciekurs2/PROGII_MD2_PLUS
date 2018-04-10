@@ -13,7 +13,7 @@ namespace md2
             InitializeComponent();
         }
 
-        private void confirmButtonFavorite_Click(object sender, EventArgs e)
+        private void ConfirmButtonFavorite_Click(object sender, EventArgs e)
         {
             var cityName = texBoxFavorite.Text;
             var timeStamp = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss tt");

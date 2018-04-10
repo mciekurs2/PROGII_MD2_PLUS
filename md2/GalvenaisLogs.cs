@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Data.OleDb;
+using System.IO;
 using System.Windows.Forms;
 
 namespace md2
@@ -84,6 +86,33 @@ namespace md2
         private void RefreshButton_Click(object sender, EventArgs e)
         {
             Functions.LoadListBox(cityListBox);
+        }
+
+        private void RemoveButton_Click(object sender, EventArgs e)
+        {
+            //gets selectedItem from ListBox
+            var cityAdapter = cityListBox.SelectedItem as CityAdapter;
+
+            var favCityName = cityAdapter?.CityName;
+
+            var dbConnection = new OleDbConnection
+            {
+                ConnectionString = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + Path.GetFullPath(@"..\..\..\") +
+                                   "FavoriteCities.mdb"
+            };
+            dbConnection.Open();
+
+            var dbCommand = new OleDbCommand
+            {
+                Connection = dbConnection,
+                CommandText = "DELETE FROM CitiesInfo WHERE cityName ='" + favCityName + "'"
+            };
+
+            dbCommand.ExecuteNonQuery();
+            dbConnection.Close();
+
+            Functions.LoadListBox(cityListBox);
+
         }
     }
 }
