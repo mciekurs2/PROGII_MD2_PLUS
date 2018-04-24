@@ -15,6 +15,14 @@ namespace md2
 
         private void ConfirmButtonFavorite_Click(object sender, EventArgs e)
         {
+            //parbauda vai textbox ir tukšs
+            if (string.IsNullOrWhiteSpace(texBoxFavorite.Text))
+            {
+                Messages.ShowError(Messages.ErrorOne);
+                return;
+            }
+
+
             var cityName = texBoxFavorite.Text;
             var timeStamp = DateTime.Now.ToString("yyyy-MM-dd h:mm:ss tt");
 
@@ -44,4 +52,11 @@ namespace md2
 
         }
     }
+
+    public class Messages : ErrorMessages
+    {
+        //new izmanto lai izsauktu paslpēšanu
+        new public static string ErrorOne = "Please enter a city name";
+    }
+
 }

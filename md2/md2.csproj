@@ -62,6 +62,7 @@
       <DependentUpon>AddCityForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CityAdapter.cs" />
+    <Compile Include="ErrorMessages.cs" />
     <Compile Include="FavoriteCitiesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -80,7 +81,6 @@
     <Compile Include="Grafiskais Logs.Designer.cs">
       <DependentUpon>Grafiskais Logs.cs</DependentUpon>
     </Compile>
-    <Compile Include="JsonParser.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WeatherDataToday.cs" />

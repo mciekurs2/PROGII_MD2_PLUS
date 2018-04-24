@@ -9,7 +9,7 @@ using Newtonsoft.Json;
 
 namespace md2
 {
-    internal class Functions
+    class Functions
     {
         public static void LoadListBox(ListBox listBox)
         {

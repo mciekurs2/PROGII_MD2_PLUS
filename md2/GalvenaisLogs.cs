@@ -51,7 +51,7 @@ namespace md2
             //ielade dataGridView elementus (pagaidu variants)
             var city = pilsetaComboBox.SelectedItem.ToString();
             Functions.LoadDataGridView(city, nedelasTempGridView, valstsKods);
-            Functions.LoadListBox(cityListBox);
+            RefreshFunction.LoadListBox(cityListBox);
         }
 
         private void FileExitMenu_Click(object sender, EventArgs e)
@@ -115,4 +115,10 @@ namespace md2
 
         }
     }
+
+    internal class RefreshFunction : Functions
+    {
+
+    }
+
 }
