@@ -83,7 +83,19 @@ namespace md2
                           "&mode=json&units=metric&APPID=02960f011b3cb23776734af3fa9fdf50";
                 using (var webClientWeather = new WebClient())
                 {
-                    var jsonString = webClientWeather.DownloadString(url);
+                    String jsonString;
+
+                    try
+                    {
+                        jsonString = webClientWeather.DownloadString(url);
+                    }
+                    catch (WebException)
+                    {
+                        ErrorFunctions.ShowError("Please delete this value from db (temporary solution): ", cityName);
+                        continue;
+
+                    }
+
                     var data = JsonConvert.DeserializeObject<WeatherDataToday>(jsonString);
                     var iconIdCur = data.Weather[0].Icon;
                     tempCur = data.Main.Temp;

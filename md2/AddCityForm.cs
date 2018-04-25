@@ -53,10 +53,11 @@ namespace md2
         }
     }
 
-    public class Messages : ErrorMessages
+    public class Messages : ErrorFunctions
     {
         //new izmanto lai izsauktu paslpēšanu
         new public static string ErrorOne = "Please enter a city name";
+
     }
 
 }

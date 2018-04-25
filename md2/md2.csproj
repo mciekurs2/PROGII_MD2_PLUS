@@ -62,7 +62,7 @@
       <DependentUpon>AddCityForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CityAdapter.cs" />
-    <Compile Include="ErrorMessages.cs" />
+    <Compile Include="ErrorFunctions.cs" />
     <Compile Include="FavoriteCitiesDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

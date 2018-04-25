@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace md2
 {
-    public class ErrorMessages
+    public class ErrorFunctions
     {
         public static string ErrorOne = "Please eneter values";
         public static string ErrorTwo = "Temporary Text";
@@ -15,6 +15,11 @@ namespace md2
         public static void ShowError(string error)
         {
             MessageBox.Show(error);
+        }
+
+        public static void ShowError(string error, string dbValue)
+        {
+            MessageBox.Show(error + dbValue);
         }
 
     }
