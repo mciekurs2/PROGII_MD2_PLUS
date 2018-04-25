@@ -17,9 +17,9 @@ namespace md2
             MessageBox.Show(error);
         }
 
-        public static void ShowError(string error, string dbValue)
+        public static void ShowError(string error, string dbValue , int index)
         {
-            MessageBox.Show(error + dbValue);
+            MessageBox.Show(error + dbValue + " at " + index);
         }
 
     }

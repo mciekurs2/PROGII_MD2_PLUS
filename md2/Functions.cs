@@ -69,6 +69,8 @@ namespace md2
             };
 
             var readData = loadCom.ExecuteReader();
+            int times = 0;
+
             while (readData != null && readData.Read())
             {
                 //readItems
@@ -91,8 +93,10 @@ namespace md2
                     }
                     catch (WebException)
                     {
-                        ErrorFunctions.ShowError("Please delete this value from db (temporary solution): ", cityName);
+                        ErrorFunctions.ShowError("Please delete this value from db (temporary solution): ", cityName, times);
+                        times++;
                         continue;
+                       
 
                     }
 
@@ -107,6 +111,7 @@ namespace md2
                 //add data to listBox
                 var sample = new CityAdapter(Image.FromStream(ms), cityName, tempCur);
                 list.Add(sample);
+                times++;
             }
             dbCon.Close();
             return list;
